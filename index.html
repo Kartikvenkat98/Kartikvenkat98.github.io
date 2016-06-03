@@ -1,1 +1,95 @@
-Hello World
+<!DOCTYPE html>
+	<head>
+		<meta http-equiv="Content-Type" "charset=utf-8" />
+		<title>Kartik</title>
+		<link rel="stylesheet" href="Kartik.css" />
+	</head>
+
+	<body>
+	
+		<div style="position: fixed; z-index:1">				
+				<img src="myself.png" id="pic1" title="Who I Am" onClick="location.href='#whoIAm'"
+				style="width:40px;height:40px;border-radius:60%;position:absolute;left:0;top:0;margin:25px; cursor:pointer;">
+				<img src="heart.png" id="pic2" title="What I Love To Do" onClick="location.href='#whatILoveToDo'"
+				style="width:40px;height:40px;border-radius:60%;position:absolute;left:0;top:0;margin:25px;cursor:pointer; "/>
+				<img src="code.png" id="pic3" title="What I've Done" onClick="location.href='#whatI'veDone'" 
+				style="width:40px;height:40px;border-radius:60%;position:absolute;left:0;top:0;margin:25px;cursor:pointer; "/>
+                <img src="contact.jpe" id="pic4" title="Contact" onClick="location.href='#contact'"
+				style="width:40px;height:40px;border-radius:60%;position:absolute;left:0;top:0;margin:25px;cursor:pointer; "/>
+                <img src="games.jpe" id="pic5" title="MemoryGame" onClick="location.href='MemoryGame.html'"
+				style="width:40px;height:40px;border-radius:60%;position:absolute;left:0;top:0;margin:25px;cursor:pointer; "/>
+                
+                
+				<img src="icon.png" title="About Me" onClick="fun()"
+				style="width:60px;height:60px;border-radius:60%;position:absolute;left:0;margin:16px;cursor:pointer;"/>
+                
+			</div>
+
+      	<div id="coverpage" style="overflow:hidden">
+            <div id="intro">Hey guys!!! I'm Kartik
+            <br /><br />
+            It's good to see you here :)</div>
+      	</div>
+      	<br /><br />
+      	<center>
+        <div id="whoIAm">
+            <p style="font-size:32px;font-weight:400">Hi.</p>
+            <br/>
+            <p>
+              I'm Kartik Venkataraman. I am a student of Computer Science and Engineering at <a href="http://www.nitt.edu/"> NIT Trichy</a>.
+              I come from <a href="https://en.wikipedia.org/wiki/Nagpur">Nagpur, Maharashtra</a>, also known as the <span style="color:#F60">'Orange City'</span>.
+              I am deeply interested in Algorithms, Web Dev, App Dev and Cricket ;)   
+              I aspire to work in a company that offers a chance to apply all the knowledge gained over the years to solve some real life problems 	                            and to make the world a better place.
+            </p>
+         </div>
+         <br/><br/>
+         <div id="whatILoveToDo" style="background: url(bg2.jpe); background-size: cover;">
+          	<p>
+            As already mentioned, my major interests involve competitive coding and playing cricket.
+            I've been solving algorithmic problems on platforms
+            like <a href="https://www.hackerrank.com"><span style="color:#030">Hackerrank</span></a> and <a href="https://www.codechef.com"><span style="color:            #630">CodeChef</span></a> for about an year or so now.
+            My other interests include Electronics, playing Chess, Table - Tennis, watching movies and spending time with my friends :)
+          	</p>
+         	<br/>
+         	<p>I &hearts; <span id='abcd' style="color:red"></span></p>
+         </div>
+         <br /><br />
+         <div id="whatI'veDone" style="height:300px; font-size:22px; text-align:center;  padding-top: 15px; padding-bottom: 15px; padding-left: 14%; padding-right: 14%;  font-weight: 100;  line-height: 1.5em;">
+            <p>
+            In the first year, I took part in various competitions organised in NITT. I alongwith three of my friends came 2nd in the <strong>Maze-Solver
+            </strong> competition organised during <strong>Sensors2k16 - The National Level Symposium of ICE</strong>. 
+            I won the 1st prize in
+            <a href="https://www.codechef.com/NITT2016">NITT2016</a> competition held on CodeChef platform organised 
+            by fellow first years, Deep Bhattacharyya and Shreehari A. I also participated in Grab2Smash and Line Follower organised by RMI.
+            <br /><br />
+            Last but not the least, I designed this webpage.. ;)
+            </p>
+        </div>
+        <br /><br /> 
+        <div id="contact" style="background:url(contactbg.jpe); background-size: cover; height:250px">
+          <p>
+            That's it for now, stay tuned for further details.<br /> 
+            If you have anything to share with me, or just want to ping me, feel free to contact me :) .<br/><br/>Find me on <br /><br />
+            &nbsp;
+            <a href="https://www.facebook.com/kartik.venkataraman.52" target="_blank">
+              <img src="fblogo.png" style="height:40px;width:40px;border-radius:50%">
+            </a>
+            &nbsp;
+            <a href="https://gitter.im/Kartikvenkat98" target="_blank">
+              <img src="gitter.jpe" style="height:40px;width:40px;border-radius:50%">
+            </a>
+            &nbsp;
+            <a href="https://github.com/Kartikvenkat98" target="_blank">
+              <img src="GitHub.png" style="height:40px;width:40px;border-radius:50%">
+            </a>
+            &nbsp;
+            <a href="https://twitter.com/Kartikv27" target="_blank">
+              <img src="twitter.jpe" style="height:40px;width:40px;border-radius:50%">
+            </a>
+          </p>
+        </div>
+        <footer>Made with HTML, CSS, Javascript and lots of &hearts;</footer>
+      </center>
+    <script src="Kartik.js" type="text/javascript"></script>
+  </body>
+</html>
