@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+body
+{
+	background: url(bgimage.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+#memory_board
+{
+	background: #FF0;
+	border:#999 1px solid;
+	width:535px;
+	height: 535px;
+	padding:24px;
+	margin:0px auto;
+}
+
+#memory_board > div
+{
+	background:url(images.jpg);
+	border:#000 1px solid;
+	width:71px;
+	height:71px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:64px;
+	cursor:pointer;
+	
+	text-align:center;
+}
+
+@media screen and (max-device-width: 481px) 
+{
+   
+   #memory_board
+   {
+	background: #FF0;
+	border:#999 1px solid;
+	width:535px;
+	height:1000px;
+	padding:24px;
+	margin:0px auto;
+   }
+
+
+   #memory_board > div
+   {
+	background:url(images.jpg);
+	border:#000 1px solid;
+	width:70px;
+	height:190px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:64px;
+	cursor:pointer;
+	line-height: 2em;
+	text-align:center;
+   }
