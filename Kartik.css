@@ -41,6 +41,9 @@ body
   font-weight: 100;
   text-align: center;
   line-height: 1.5em;
+  transition: transform 2s;
+  -webkit-transition :transform 2s;
+  transition-timing-function: ease-out;
 }
 
 #whatI'veDone
@@ -56,6 +59,10 @@ body
 	line-height: 1.5em;
 }
 
+p
+{
+	transition: all 1s ease;
+}
 footer 
 {
   color: #333;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="carousel.css">
+	</head>
+
+	<body>
+
+		<div class="slideshow-container">
+
+			<div class="mySlides fade" onmouseover="halt()" onmouseout="start()">
+				<img src="Olympics.jpg" style= "width:100%; height:100%;">
+				<div class="text">Caption One</div>
+			</div>
+
+			<div class="mySlides fade" onmouseover="halt()" onmouseout="start()">
+				<img src="EngPak.jpg" style="width:100%; height:100%;">
+				<div class="text">Caption Two</div>
+			</div>
+
+			<div class="mySlides fade" onmouseover="halt()" onmouseout="start()">
+				<img src="Deadline_Day.jpg" style="width:100%; height:100%;">
+				<div class="text">Caption Three</div>
+			</div>
+
+			<div class="mySlides fade" onmouseover="halt()" onmouseout="start()">
+				<img src="ICC.jpg" style="width:100%; height:100%;">
+				<div class="text">Caption Four</div>
+			</div>
+
+		</div>
+
+		<div class="class" style="text-color: #f2f2f2">
+			<header class="header" style="color: white">EDITOR'S PICKS</header>
+			<div style="height: calc(100% - 30px);">
+
+				<label class="label" id="label-1" onmouseover="currentSlide(1)" onmouseout="start()"><a href="https://www.google.com" style="text-decoration:none; color: white;">Content for 1</a></label>
+
+				<label class="label" id="label-2" onmouseover="currentSlide(2)" onmouseout="start()"><a href="https://www.google.com" style="text-decoration:none; color: white;">Content for 2</a></label>
+
+				<label class="label" id="label-3" onmouseover="currentSlide(3)" onmouseout="start()"><a href="https://www.google.com" style="text-decoration:none; color: white;">Content for 3</a></label>
+
+				<label class="label" id="label-4" onmouseover="currentSlide(4)" onmouseout="start()"><a href="https://www.google.com" style="text-decoration:none; color: white;">Content for 4</a></label>
+				
+			</div>
+		</div>
+		<script type="text/javascript" src="carousel.js"></script>
+	</body>
+</html> 
