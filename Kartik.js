@@ -45,7 +45,7 @@ setInterval(change,200);
 */
 
 //for the i love html animation
-var arr = ["C++","Java","Python","Algorithms","HTML","CSS","Javascript"];
+var arr = ["C++","Python","Algorithms","HTML","CSS","Javascript","PHP","Laravel"];
 var i = 0;
 var j = 0;
 var inc = 1;
