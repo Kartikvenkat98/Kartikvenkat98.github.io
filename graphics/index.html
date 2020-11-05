@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+
+<body>
+  <div id="implement">IMPLEMENTATION OF RESEARCH PAPER</div>
+  <div id="title">EFFICIENT SURFEL-BASED SLAM USING 3D LASER RANGE DATA IN URBAN ENVIRONMENTS</div>
+  <div id="name">Kartik Venkataraman</div>
+  <div id="example">
+    <img src="example.svg">
+  </div>
+
+  <h2>SUMMARY:</h2>
+
+  <div id="block">
+    <h3>Description</h3>
+    <p>For the CSCE 641 Computer Graphics project, I would be working on implementing the research paper - Efficient Surfel-Based SLAM using 3D Laser Range Data in Urban Environments. This paper proposes a dense approach to laser-based mapping that operates on three-dimensional point clouds obtained from rotating laser sensors. A surfel-based map is constructed and it estimates the changes in the robot's pose by exploiting the projective data association between the current scan and a rendered model view from that surfel map. For detection and verification of a loop closure, the authors have leveraged the map representation to compose a virtual view of the map before a potential loop closure, which enables a more robust detection even with low overlap between the scan and the already mapped areas. This approach is efficient and enables real-time capable registration. At the same time, it is able to detect loop closures and to perform map updates in an online fashion. The experiments performed show that it is possible to estimate globally consistent maps in large scale environments solely based on point cloud data.
+    </p>
+  </div>
+
+  <div id="block">
+    <h3>Importance</h3>
+    <p>Accurate and reliable localization and mapping is a fundamental building block for most autonomous robots. Most autonomous robots, including self-driving cars, must be able to reliably localize themselves, ideally by using only their own sensors without relying on external information such as GPS or other additional infrastructure placed in the environment. Dense approaches have a prospective advantage over feature-based and sparse approaches as they use all available information and thus do not depend on reliable feature extraction or availability of such features.</p>
+  </div>
+
+  <div id="block">
+    <h3>Previous Work</h3>
+    <p>Odometry estimation and Simultaneous Localization and Mapping (SLAM), especially with (stereo) cameras and 2D laser range scanners, is a classical topic in robotics and in the computer vision community. There has been significant advances in visionbased and RGB-D-based SLAM systems over the past few years. Most of these approaches use (semi-)dense reconstructions of the environment and exploit them for frameto-model tracking, either by jointly optimizing the map and pose estimates or by alternating pose estimation and map building.</p>
+    <p> The current 3D laser-based mapping systems mainly accomplish the estimation relying on feature-based solutions, reduced map representations, voxel grid-based methods, or point sub-sampling, which all effectively reduce the data used for alignment.</p>
+    <p>There has also been considerable progress in the field of RGB-D-based SLAM. KinectFusion, largely impacted the development in the subsequent years. In line with this, another approach of RGB-D SLAM uses projective data association in a dense model, but relies on a surfel-based map for tracking. The surfel-based representation allows to model comparably large environments without a compromise in terms of reduced reconstruction fidelity due to reduced grid resolution or a more complex implementation. Other recent RGB-D approaches use the surfels to extract planar surfaces or perform online loop closure integration by deforming the surfel representation.</p>
+    <p>For more information on previous related work done on this topic, please have a look at the research paper, link to which is provided below.
+  </div>
+
+  <div id="links">
+    <a href="behley2018rss.pdf" target="blank">
+      <i class="far fa-file-pdf"></i> PDF version of research paper</a>
+  </div>
+
+  <div id="block">
+    <h3>Proposal</h3>
+    <p>I'm really interested in Robotics and Computer Vision which led me to this paper in the first place. </p>
+    <p> First, I would like to go through more related work on SLAM techniques and learn more about the topic.</p>
+    <p>Then I would learn more about ROS (Robot Operating System). ROS is an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers.</p>
+    <p>After learning about the required softwares and tools, I would start implementing this research paper.</p>
+  </div>
+
+  <div id="block">
+    <h3>Originality</h3>
+    <p>No, this is not my original work. I'm just interested in this research paper and found it to be challenging. So, I'm planning to implement this paper. I have cited this reseach paper below.</p>
+  </div>
+
+    <div id="block">
+    <h3>Relationship to Graphics</h3>
+    <p>I'm doing my paper presentation on Point-based Rendering/Surfels. I wanted to work on something related to Surfels and as I'm interested in Robotics, I chose this paper.</p>
+  </div>
+
+  <h2>GOALS:</h2>
+
+  <div id="block">
+    <h3>Intermediate Goals</h3>
+    <ol>
+      <li>Learn more about ROS</li>
+      <li>Install ROS and required dependencies such as catkin</li>
+      <li>Install OpenGL and required dependencies</li>
+      <li>Have a basic workspace up and running</li>
+    </ol>
+
+    <h3>Final Goals</h3>
+    <ol>
+      <li>Have a fully working implementation of this research paper.</li>
+      <li>If I have some time left, try something new as a stretch goal.</li>
+    </ol>
+  </div>
+
+  <h2>CITATION:</h2>
+
+  <div id="block">    
+  <p>J. Behley, C. Stachniss. Efficient Surfel-Based SLAM using 3D Laser Range Data in Urban Environments, Proc. of Robotics: Science and Systems (RSS), 2018.</p>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/prism.min.js"></script>
+</body>
+
+</html>

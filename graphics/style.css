@@ -1,0 +1,62 @@
+body
+{
+	margin: 1em auto;
+	width: 60em;
+  line-height: 1.5;
+  color: #24292e;
+}
+
+
+div#title {
+  text-align: center;
+  font-size: 24pt;
+  font-weight: bold;
+  font-family: serif;
+  margin-bottom: 1em;
+}
+
+div#implement {
+  text-align: center;
+  font-size: 24pt;
+  font-weight: bold;
+  font-family: serif;
+  margin-bottom: 1em;
+}
+
+div#example {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+div#name {
+  text-align: center;
+  font-size: 14pt;
+  margin-bottom: 2em;
+}
+
+p code {
+  font-weight: bold;
+  font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+}
+
+div p, div li, div img, div h4 {
+  margin: 0em 2em 1em 2em;
+  hyphens: auto;
+  text-align: justify;
+  text-decoration: black;
+}
+
+div#links{
+  text-align: center;
+  margin:2em;
+}
+
+pre#bibtex {
+  margin: 1em 2em;
+}
