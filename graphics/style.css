@@ -23,6 +23,14 @@ div#implement {
   margin-bottom: 1em;
 }
 
+div#project {
+  text-align: center;
+  font-size: 24pt;
+  font-weight: bold;
+  font-family: serif;
+  margin-bottom: 1em;
+}
+
 div#example {
   text-align: center;
   margin-top: 50px;
