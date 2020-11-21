@@ -19,8 +19,15 @@
   <div id="implement">IMPLEMENTATION OF RESEARCH PAPER</div>
   <div id="title">EFFICIENT SURFEL-BASED SLAM USING 3D LASER RANGE DATA IN URBAN ENVIRONMENTS</div>
   <div id="name">Kartik Venkataraman</div>
+  <div id="toUpdate" align="center">
+  <a href="#update">Click here to see the project update report (11/20/2020)</a>
+  </div>
   <div id="example">
     <img src="example.svg">
+  </div>
+
+  <div align="center">
+  <h1>PROJECT PROPOSAL</h1>
   </div>
 
   <h2>SUMMARY:</h2>
@@ -85,13 +92,81 @@
     </ol>
   </div>
 
+  <div id="update" align="center">
+  <h1>UPDATED REPORT</h1>
+  </div>
+
+  <h2>SUMMARY:</h2>
+
+  <div id="block">
+    <p>I went through the paper and read upon related terms and tried to understand the underlying concept. I learnt more about ROS (Robot Operating System). I installed the required dependencies for ROS such as catkin and created a catkin workspace.  I also installed OpenGL and required external libraries. So, now I have a basic workspace up and running.
+    </p>
+  </div>
+
+  <h2>ANALYSIS:</h2>
+
+  <div id="block">
+  <h3>Robot Operating System</h3>
+    <p>ROS is an open-source, meta-operating system for a robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers and more. ROS is licensed under an open source, BSD license.
+    </p>
+    <p>The ROS runtime "graph" is a peer-to-peer network of processes (potentially distributed across machines) that are loosely coupled using the ROS communication infrastructure. ROS implements several different styles of communication, including synchronous RPC-style communication over services, asynchronous streaming of data over topics, and storage of data on a Parameter Server.
+    </p>
+    <p>ROS currently only runs on Unix-based platforms. Software for ROS is primarily tested on Ubuntu and Mac OS X systems, though the ROS community has been contributing support for Fedora, Gentoo, Arch Linux and other Linux platforms. ROS framework is easy to implement in any modern programming language, Python, C++, Java, etc. It can be easily integrated with OpenCV.
+    </p>
+    <div align="center">
+    <a href="http://wiki.ros.org/">Click here to learn more about ROS</a>
+    </div>
+
+  <h3>Catkin</h3>
+    <p>Catkin is the official build system of ROS. catkin combines CMake macros and Python scripts to provide some functionality on top of CMake's normal workflow. catkin was designed to allow better distribution of packages, better cross-compiling support, and better portability. catkin's workflow is very similar to CMake's but adds support for automatic 'find package' infrastructure and building multiple, dependent projects at the same time.
+    </p>
+    <div align="center">
+      <a href="http://wiki.ros.org/catkin">Click here to learn more about catkin</a>
+    </div>
+
+  <h3>Installing Dependencies</h3>
+   <ol>
+      <li>catkin</li>
+      <li>Qt5 >= 5.2.1</li>
+      <li>OpenGL >= 3.3</li>
+      <li>libEigen >= 3.2</li>
+      <li>gtsam >= 4.0</li>
+    </ol>
+  <p>In Ubuntu 16.04, installing all dependencies can be accomplished by</p>
+  <em>sudo apt-get install build-essential cmake libgtest-dev libeigen3-dev libboost-all-dev qtbase5-dev libglew-dev libqt5libqgtk2 catkin</em></br>
+  <p>Additionally, we need to have catkin-tools and the fetch verb installed.</p>
+  <em>sudo apt install python-pip</em></br>
+  <em>sudo pip install catkin_tools catkin_tools_fetch empy</em></br>
+  <p>We need to create a catkin workspace</p>
+  <em>cd</em></br>
+  <em>mkdir -p catkin_ws/src && cd catkin_ws</em></br>
+  <em>catkin init</em></br>
+  <em>cd src && git clone https://github.com/ros/catkin.git</em></br>
+  </div>
+
+  <h2>PLAN AHEAD:</h2>
+
+  <div id="block">
+    <p>I will start implementing the paper according to the steps mentioned in the paper.
+     <ol>
+      <li>Preprocessing - For projective data association, we first project the point cloud P to the vertex map Vd : R2 -> R3 , where each pixel contains the nearest 3D point.</li>
+      <li>Map Representation - A surfel-based map is employed since it allows us to represent even large-scale environments and maintain dense, detailed geometric information of the point clouds at the same time</li>
+      <li>Odometry Estimation - The observerd point cloud is aligned to a rendered representation of the model in coordinate frame before rendering all surfels, resulting in a local view of the already mapped world at timestmap t−1.</li>
+      <li>Map Update - Given the current pose of the frame-to-model ICP, we integrate the points inside into the surfel map.</li>
+      <li>Loop Closures - For loop closure detection, we exploit the surfel map to render views Analogous to the odometry, we now use this rendered view to register the current point cloud. A loop closure is only considered if a composed virtual map view built from this alignment fits to the current measurements.</li>
+    </ol>
+    </p>
+  </div>
+
+
+
+
+
   <h2>CITATION:</h2>
 
   <div id="block">    
   <p>J. Behley, C. Stachniss. Efficient Surfel-Based SLAM using 3D Laser Range Data in Urban Environments, Proc. of Robotics: Science and Systems (RSS), 2018.</p>
   </div>
-
-
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/prism.min.js"></script>
