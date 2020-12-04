@@ -19,35 +19,53 @@
   <div id="implement">IMPLEMENTATION OF RESEARCH PAPER</div>
   <div id="title">EFFICIENT SURFEL-BASED SLAM USING 3D LASER RANGE DATA IN URBAN ENVIRONMENTS</div>
   <div id="name">Kartik Venkataraman</div>
-  <div id="toUpdate" align="center">
-  <a href="#update">Click here to see the project update report (11/20/2020)</a>
+  <div align="center">
+  <a href="./proposal/index.html" target="blank">Click here to see the project proposal and project update reports</a>
   </div>
   <div id="example">
     <img src="example.svg">
   </div>
 
   <div align="center">
-  <h1>PROJECT PROPOSAL</h1>
+  <h1>FINAL REPORT</h1>
   </div>
 
   <h2>SUMMARY:</h2>
 
   <div id="block">
-    <h3>Description</h3>
-    <p>For the CSCE 641 Computer Graphics project, I would be working on implementing the research paper - Efficient Surfel-Based SLAM using 3D Laser Range Data in Urban Environments. This paper proposes a dense approach to laser-based mapping that operates on three-dimensional point clouds obtained from rotating laser sensors. A surfel-based map is constructed and it estimates the changes in the robot's pose by exploiting the projective data association between the current scan and a rendered model view from that surfel map. For detection and verification of a loop closure, the authors have leveraged the map representation to compose a virtual view of the map before a potential loop closure, which enables a more robust detection even with low overlap between the scan and the already mapped areas. This approach is efficient and enables real-time capable registration. At the same time, it is able to detect loop closures and to perform map updates in an online fashion. The experiments performed show that it is possible to estimate globally consistent maps in large scale environments solely based on point cloud data.
+    <h3>Description:</h3>
+    <p>For the CSCE 641 Computer Graphics project, I worked on implementing the research paper - Efficient Surfel-Based SLAM using 3D Laser Range Data in Urban Environments. This paper proposes a dense approach to laser-based mapping that operates on three-dimensional point clouds obtained from rotating laser sensors. A surfel-based map is constructed and it estimates the changes in the robot's pose by exploiting the projective data association between the current scan and a rendered model view from that surfel map. For detection and verification of a loop closure, the authors have leveraged the map representation to compose a virtual view of the map before a potential loop closure, which enables a more robust detection even with low overlap between the scan and the already mapped areas. This approach is efficient and enables real-time capable registration. At the same time, it is able to detect loop closures and to perform map updates in an online fashion. The experiments performed show that it is possible to estimate globally consistent maps in large scale environments solely based on point cloud data.
     </p>
   </div>
 
   <div id="block">
-    <h3>Importance</h3>
+    <h3>Importance:</h3>
     <p>Accurate and reliable localization and mapping is a fundamental building block for most autonomous robots. Most autonomous robots, including self-driving cars, must be able to reliably localize themselves, ideally by using only their own sensors without relying on external information such as GPS or other additional infrastructure placed in the environment. Dense approaches have a prospective advantage over feature-based and sparse approaches as they use all available information and thus do not depend on reliable feature extraction or availability of such features.</p>
   </div>
 
+  <h2>PREVIOUS WORK:</h2>
+
   <div id="block">
-    <h3>Previous Work</h3>
-    <p>Odometry estimation and Simultaneous Localization and Mapping (SLAM), especially with (stereo) cameras and 2D laser range scanners, is a classical topic in robotics and in the computer vision community. There has been significant advances in visionbased and RGB-D-based SLAM systems over the past few years. Most of these approaches use (semi-)dense reconstructions of the environment and exploit them for frameto-model tracking, either by jointly optimizing the map and pose estimates or by alternating pose estimation and map building.</p>
-    <p> The current 3D laser-based mapping systems mainly accomplish the estimation relying on feature-based solutions, reduced map representations, voxel grid-based methods, or point sub-sampling, which all effectively reduce the data used for alignment.</p>
-    <p>There has also been considerable progress in the field of RGB-D-based SLAM. KinectFusion, largely impacted the development in the subsequent years. In line with this, another approach of RGB-D SLAM uses projective data association in a dense model, but relies on a surfel-based map for tracking. The surfel-based representation allows to model comparably large environments without a compromise in terms of reduced reconstruction fidelity due to reduced grid resolution or a more complex implementation. Other recent RGB-D approaches use the surfels to extract planar surfaces or perform online loop closure integration by deforming the surfel representation.</p>
+    <p>Odometry estimation and Simultaneous Localization and Mapping (SLAM), especially with (stereo) cameras and 2D laser range scanners, is a classical topic in robotics and in the computer vision community. There has been significant advances in vision-based <a href='#citation1'>[1]</a><a href='#citation2'>[2]</a> and RGB-D-based <a href='#citation3'>[3]</a><a href='#citation4'>[4]</a> SLAM systems over the past few years. Most of these approaches use dense or semi-dense reconstructions of the environment and exploit them for frame-to-model tracking, either by jointly optimizing the map and pose estimates or by alternating pose estimation and map building <a href='#citation5'>[5]</a>.</p>
+  </div>
+
+  <div id="block">
+    <h3>Laser-Based Mapping:</h3>
+    <p>Laser-based odometry and mapping systems mainly accomplish the estimation relying on feature-based solutions <a href='#citation6'>[6]</a><a href='#citation7'>[7]</a>, reduced map representations <a href='#citation8'>[8]</a><a href='#citation9'>[9]</a>, voxel grid-based methods<a href='#citation10'>[10]</a>, or point sub-sampling<a href='#citation11'>[11]</a>, which all effectively reduce the data used for alignment. The Lidar Odometry and Mapping (LOAM) <a href='#citation6'>[6]</a><a href='#citation7'>[7]</a>extracts distinct features corresponding to surfaces and corners, which are then used to determine point-to-plane and point-to-line distances to a voxel grid-based map representation. To enable real-time operation, LOAM switches between frame-to-frame at 10 Hz and frame-to-model operation at 1 Hz update frequency.</p>
+    <p> In contrast to the mentioned approaches, this paper uses projective data association to estimate dense correspondences for each projected point and therefore is more robust to missing features or missing data. Unlike other approaches, it can perform frame-to-model tracking in every iteration and updates the map representation at the same time. Lastly, none of the mentioned approaches integrates loop closures in an online fashion to obtain globally consistent maps.</p>
+  </div>
+
+    <div id="block">
+    <h3>RGB-D-based Mapping:</h3>
+    <p>In recent years, there has been considerable progress in the field of RGB-D-based SLAM. KinectFusion <a href='#citation4'>[4]</a> largely impacted the development in the subsequent years. Another approach <a href='#citation12'>[12]</a> for RGB-D SLAM uses projective data association in a dense model, but relies on a surfel-based map for tracking. The surfel-based representation allows to model comparably large environments without a compromise in terms of reduced reconstruction fidelity due to reduced grid resolution or a more complex implementation<a href='#citation13'>[13]</a>. Other recent RGB-D approaches use the surfels to extract planar surfaces <a href='#citation14'>[14]</a> or perform online loop closure integration by deforming the surfel representation <a href='#citation15'>[15]</a><a href='#citation16'>[16]</a>.</p>
+    <p> This paper borrows some ideas for frame-to-model registration from <a href='#citation12'>[12]</a><a href='#citation16'>[16]</a> but it is specifically designed to work with rotating laser range scanners in highly dynamic environments like busy inner-city traffic.</p>
+  </div>
+
+  <div id="block">
+    <h3>Laser-Based Loop Closure Detection:</h3>
+    <p>For loop closure detection using three-dimensional laser-range data, mainly feature-based approaches <a href='#citation17'>[17]</a><a href='#citation18'>[18]</a><a href='#citation19'>[19]</a> were investigated. These approaches either use specific interest points to aggregate features <a href='#citation18'>[18]</a><a href='#citation19'>[19]</a> or generally generate a global feature representation of a point cloud <a href='#citation17'>[17]</a>, which is then used to compute a distance between two point clouds. Often, a simple thresholding is used to identify potential loop closure candidates, which then must be verified</p>
+    <p> In contrast to the aforementioned approaches, this paper directly determines the compatibility of the current laser scan and nearby poses using ICP. For this purpose, the authors proposed to use a criterion based on a rendered view of the map to determine if a loop closure leads to a consistent map given the current scan. This is verified multiple times after the first detection before the scan is integrated into the map.</p>
+
     <p>For more information on previous related work done on this topic, please have a look at the research paper, link to which is provided below.
   </div>
 
@@ -56,75 +74,160 @@
       <i class="far fa-file-pdf"></i> PDF version of research paper</a>
   </div>
 
-  <div id="block">
-    <h3>Proposal</h3>
-    <p>I'm really interested in Robotics and Computer Vision which led me to this paper in the first place. </p>
-    <p> First, I would like to go through more related work on SLAM techniques and learn more about the topic.</p>
-    <p>Then I would learn more about ROS (Robot Operating System). ROS is an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers.</p>
-    <p>After learning about the required softwares and tools, I would start implementing this research paper.</p>
-  </div>
-
-  <div id="block">
-    <h3>Originality</h3>
-    <p>No, this is not my original work. I'm just interested in this research paper and found it to be challenging. So, I'm planning to implement this paper. I have cited this reseach paper below.</p>
-  </div>
+  <h2>DESCRIPTION OF WORK:</h2>
 
     <div id="block">
-    <h3>Relationship to Graphics</h3>
-    <p>I'm doing my paper presentation on Point-based Rendering/Surfels. I wanted to work on something related to Surfels and as I'm interested in Robotics, I chose this paper.</p>
-  </div>
-
-  <h2>GOALS:</h2>
-
-  <div id="block">
-    <h3>Intermediate Goals</h3>
-    <ol>
-      <li>Learn more about ROS</li>
-      <li>Install ROS and required dependencies such as catkin</li>
-      <li>Install OpenGL and required dependencies</li>
-      <li>Have a basic workspace up and running</li>
-    </ol>
-
-    <h3>Final Goals</h3>
-    <ol>
-      <li>Have a fully working implementation of this research paper.</li>
-      <li>If I have some time left, try something new as a stretch goal.</li>
+  <h3>Approach Overview:</h3>
+    <div id="example">
+      <img src="overview.png">
+    </div>
+     <ol>
+      <li>Preprocessing - For projective data association, we first project the point cloud P to the vertex map Vd : $\mathbb{R^2}$ –> $\mathbb{R^3}$ , where each pixel contains the nearest 3D point.</li>
+      <li>Map Representation - A surfel-based map is employed since it allows us to represent even large-scale environments and maintain dense, detailed geometric information of the point clouds at the same time</li>
+      <li>Odometry Estimation - The observerd point cloud is aligned to a rendered representation of the model in coordinate frame before rendering all surfels, resulting in a local view of the already mapped world at timestamp t−1.</li>
+      <li>Map Update - Given the current pose of the frame-to-model ICP, we integrate the points inside into the surfel map.</li>
+      <li>Loop Closures - For loop closure detection, we exploit the surfel map to render views Analogous to the odometry, we now use this rendered view to register the current point cloud. A loop closure is only considered if a composed virtual map view built from this alignment fits to the current measurements.</li>
     </ol>
   </div>
 
-  <div id="update" align="center">
-  <h1>UPDATED REPORT</h1>
-  </div>
 
-  <h2>SUMMARY:</h2>
 
   <div id="block">
-    <p>I went through the paper and read upon related terms and tried to understand the underlying concept. I learnt more about ROS (Robot Operating System). I installed the required dependencies for ROS such as catkin and created a catkin workspace.  I also installed OpenGL and required external libraries. So, now I have a basic workspace up and running.
-    </p>
-  </div>
+    <h3>Dataset:</h3>
+    <p> The dataset used is the <a href='http://www.cvlibs.net/datasets/kitti/eval_odometry.php' target="blank">KITTI Vision Benchmark Suite - Visual Odometry/SLAM Evaluation</a> dataset. The odometry benchmark consists of 22 stereo sequences, saved in loss less png format. The first 11 are available to public for training the models and the remaining 11 are for evaluation.</p>
+    <div id="example">
+      <img src="odometry.jpg">
+    </div>
+    <p> For each sequence, they have provided pose files for each frame in the sequence. Pose files contains the ground truth trajectory for the first 11 sequences. Each file xx.txt contains a N x 12 table, where N is the number of frames of this sequence. Row i represents the i'th pose of the left camera coordinate system (i.e., z pointing forwards) via a 3x4 transformation matrix. The matrices are stored in row aligned order (the first entries correspond to the first row), and take a point in the i'th coordinate system and project it into the first (=0th) coordinate system. Hence, the translational part (3x1 vector of column 4) corresponds to the pose of the left camera coordinate system in the i'th frame with respect to the first (=0th) frame. Every line in the file corresponds to the entries of a homogenous transformation $\mathbf{T} \in \mathbb{R}^{4 \times 4}$ in row-major format, where the last row $(0, 0, 0, 1)$ has been omitted.</p>
+    <p> Configuration files for the Velodyne 3D rotating laser scanner are also provided.</p>
+    <p> Below we can see the configuration and pose files for each of the approaches used by the authors for this project.</p>
+    </div>
 
-  <h2>ANALYSIS:</h2>
+    <table class="paper">
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>config</th>
+          <th>poses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Frame-to-Frame</td>
+          <td>
+            <center>
+              <a href="rss2018_frame2frame.xml">
+                <i class="far fa-file-alt"></i>
+              </a>
+            </center>
+          </td>
+          <td>
+            <center>
+              <a href="rss2018_frame2frame.zip">
+                <i class="far fa-file-alt"></i>
+              </a>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <td>Frame-to-Model (no loop closure)</td>
+          <td>
+            <center>
+              <a href="rss2018_frame2model_noloop.xml">
+                <i class="far fa-file-alt"></i>
+              </a>
+            </center>
+          </td>
+          <td>
+            <center>
+              <a href="rss2018_frame2model_noloop.zip">
+                <i class="far fa-file-alt"></i>
+              </a>
+            </center>
+          </td>
+        </tr>
+        <tr>
+          <td>Frame-to-Model (with loop closure)</td>
+          <td>
+            <center>
+              <a href="rss2018_frame2model_loop.xml">
+                <i class="far fa-file-alt"></i>
+              </a>
+            </center>
+          </td>
+          <td>
+            <center>
+              <a href="rss2018_frame2model_loop.zip">
+                <i class="far fa-file-alt"></i>
+              </a>
+            </center>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  <h2>EXISTING WORK:</h2>
 
   <div id="block">
-  <h3>Robot Operating System</h3>
-    <p>ROS is an open-source, meta-operating system for a robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers and more. ROS is licensed under an open source, BSD license.
-    </p>
-    <p>The ROS runtime "graph" is a peer-to-peer network of processes (potentially distributed across machines) that are loosely coupled using the ROS communication infrastructure. ROS implements several different styles of communication, including synchronous RPC-style communication over services, asynchronous streaming of data over topics, and storage of data on a Parameter Server.
-    </p>
-    <p>ROS currently only runs on Unix-based platforms. Software for ROS is primarily tested on Ubuntu and Mac OS X systems, though the ROS community has been contributing support for Fedora, Gentoo, Arch Linux and other Linux platforms. ROS framework is easy to implement in any modern programming language, Python, C++, Java, etc. It can be easily integrated with OpenCV.
-    </p>
-    <div align="center">
-    <a href="http://wiki.ros.org/">Click here to learn more about ROS</a>
-    </div>
+  <p>The implementation is using OpenGL 4.0 and most of the data structures are represented via textures or transform feedbacks and the values are manipulated via vertex, geometry and fragment shaders. The authors have leveraged the rendering pipeline to generate vertex and normal maps. To allow real-time capable processing even in ever growing maps, a submapping approach is employed to offload parts of the map from the GPU memory to the main memory. For this, they implemented a two-dimensional rolling grid data structure of size G with extent e for each submap, which is used to determine which parts are obsolete and can be downloaded from the GPU. However, if parts of the environment are revisited, the corresponding surfels can also be uploaded again. The position of the rolling grid is updated according to the currently estimate sensor pose.</p>
+  </div>
 
-  <h3>Catkin</h3>
-    <p>Catkin is the official build system of ROS. catkin combines CMake macros and Python scripts to provide some functionality on top of CMake's normal workflow. catkin was designed to allow better distribution of packages, better cross-compiling support, and better portability. catkin's workflow is very similar to CMake's but adds support for automatic 'find package' infrastructure and building multiple, dependent projects at the same time.
-    </p>
-    <div align="center">
-      <a href="http://wiki.ros.org/catkin">Click here to learn more about catkin</a>
-    </div>
+  <div id="block">
+  <p>Below we can see a demo video of the above implementation method on sequence 00.</p>
+  <div class="embed-container"><iframe src="https://www.youtube.com/embed/gUJ-5r7ZS20" frameborder="0" allowfullscreen=""></iframe></div>
+  </div>
 
-  <h3>Installing Dependencies</h3>
+  <h2>MY WORK:</h2>
+
+  <div id="block">
+  <p>I had two options to go ahead with when I chose this project - </p>
+  <ol>
+  <li>To re-implement a part or whole of this paper</li>
+  <li>To use the existing data and work to analyse the results and try to identify something new or improve the existing results.</li>
+  </ol>
+  <p> I had initially planned to re-implement the paper but due to time and resource constraints, I went ahead with the second option of analysing the results. This project uses the .mtl and .obj files of the Passat car, tires and Velodyne laser and uses a tinyObjLoader to load them on the sequence scene based on the configuration provided by the KITTI Odometry. So, we don't require a real car or real robot to perform the analysis. We can fiddle around with the configuration files to get different results and analyse them.</p> 
+  </div>
+
+  <div id="block">
+  <h3>Understanding Configuration files:</h3>
+  <p>To analyse results and fiddling around with the configuration files, we first need to get an idea of what parameters are present in the configuration files.</p>
+  <div id="example">
+    <img src="passat_sensors_920.png" width="400" height="300">
+  </div>
+  <div id="example">
+    <img src="setup_top_view.png" width="400" height="200">
+  </div>
+  <p align="center"> The above images are taken from <a href="http://www.cvlibs.net/datasets/kitti/setup.php" target="blank">KITTI Sensor Setup</a></p>
+  <div id="example">
+    <img src="config-one.png">
+  </div>
+  <div id="block">
+  <p> These are the sensor cnfigurations. These are the most important set of parameters as they decide the view and the area that is being mapped.</p>
+  <ol>
+  <li> The parameters data_width and data_height are the dimensions of vertex/normal surfel map.</li>
+  <li> data_fov_up and data_fov_down are the angles representing the vertical Field-of-View. fov_up represents the angle above the surface line of the Velodyne laser while fov_down represents the angle beleow the surface line. Velodyne laser has a vertical Field-of-view of 30 degrees in total which can be aligned in any way required.</li>
+  <li> The depth parameter is the Depth-of-View. It is inversely proportional to magnification. It signifies how much depth i.e. distance the laser is scanning and mapping.</li>
+  </div>
+  <div id="example">
+    <img src="config-two.png">
+  </div>
+  <div id="block">
+  <p> These are the ICP (Iterative Closest Point) configurations for frame-to-model and frame-to-model with loop.</p>
+  <ol>
+  <li> The parameters max_iterations is the number of iterations to minimise the point-to-plane error.</li>
+  <li> icp_max_distance is the maximum distance of the point from the plane that is mapped to the model. Any points beyond this distance are rejected as outlier.</li> 
+  <li> icp_max_angle is the maximum angle beyond which points are rejected as outlier.</li>
+  <li>The observed point cloud is aligned to a rendered representation of the model in coordinate frame C t−1 , resulting in a local view of the already mapped world at timestmap t−1. Now, each vertex is mapped to a reference vertex and its normal. The angle is calculated between this mapped normal and the corresponding normal of that point in the Normal map.</li>
+  </div>
+
+  <div id="block">
+  <p>Apart from these, there are parameters for submapping, stability of surfels and relocalization which are common to all the approaches and I didn't experiment with them.</p>
+  </div>
+
+  <div id="block">
+  <h3>Installing Dependencies and Building the project:</h3>
+  <p> Even though I didn't re-implement the paper, I still had to install dependencies and softwares and build the project to run and analyse the results.
    <ol>
       <li>catkin</li>
       <li>Qt5 >= 5.2.1</li>
@@ -142,30 +245,407 @@
   <em>mkdir -p catkin_ws/src && cd catkin_ws</em></br>
   <em>catkin init</em></br>
   <em>cd src && git clone https://github.com/ros/catkin.git</em></br>
+  <p>Clone the repository in the src directory of your catkin workspace</p>
+  <em>git clone https://github.com/jbehley/SuMa.git</em></br>
+  <p>Download the additional dependencies</p>
+  <em>catkin deps fetch</em></br>
+  <p>Now, for the setup of the workspace containing this project, we need to run the command</p>
+  <em>catkin build --save-config -i --cmake-args -DCMAKE_BUILD_TYPE=Release -DOPENGL_VERSION=430 -DENABLE_NVIDIA_EXT=YES</em>
   </div>
-
-  <h2>PLAN AHEAD:</h2>
 
   <div id="block">
-    <p>I will start implementing the paper according to the steps mentioned in the paper.
-     <ol>
-      <li>Preprocessing - For projective data association, we first project the point cloud P to the vertex map Vd : R2 -> R3 , where each pixel contains the nearest 3D point.</li>
-      <li>Map Representation - A surfel-based map is employed since it allows us to represent even large-scale environments and maintain dense, detailed geometric information of the point clouds at the same time</li>
-      <li>Odometry Estimation - The observerd point cloud is aligned to a rendered representation of the model in coordinate frame before rendering all surfels, resulting in a local view of the already mapped world at timestmap t−1.</li>
-      <li>Map Update - Given the current pose of the frame-to-model ICP, we integrate the points inside into the surfel map.</li>
-      <li>Loop Closures - For loop closure detection, we exploit the surfel map to render views Analogous to the odometry, we now use this rendered view to register the current point cloud. A loop closure is only considered if a composed virtual map view built from this alignment fits to the current measurements.</li>
-    </ol>
-    </p>
+  <h3>Challenges Faced:</h3>
+  <p>The implementation uses only OpenGL core profile functionality. This enables us to run the project on all
+      common GPUs (including Nvidia, AMD, but also Intel). However, this decision entails also some restrictions on how we can use the library.</p>
+  <p> One of the challenges that I encountered that for this project to run, there must be a OpenGL context available. For linux, this means that a X server with a display available or must be "faked" via Xvfb. This is still needed even if no visual output is created. But I was working on Google Colab which doesn't have a display GUI of its own.</p>
+  <p>So, I had to research on ways how to get a display available for Google Colab as I didn't have any other access to GPU server. I found a way to do that using ngrok and TurboVNC Viewer.</p>
+  <p><a href="https://colab.research.google.com/drive/1pAGvTS-11-VIZ0h0-T2ZxI-5UdtmciUr?usp=sharing" target="blank">See this Colab notebook for the required steps</a></p>
   </div>
 
+  <h2>RESULTS:</h2>
 
+  <div id="example">
+    <img src="result.png">
+  </div>
+  <div id="block">
+  <p> These are the plots of the trajectories of the training set sequences of the KITTI Odometry dataset. The dashed black trajectory correspond to the GPS-based ground truth, blue is the obtained trajectory in the approach without loop closure and green is for the approach with loop closure.</p>
+  </div>
 
+  <table class="result">
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>00</th>
+          <th>01</th>
+          <th>02</th>
+          <th>03</th>
+          <th>04</th>
+          <th>05</th>
+          <th>06</th>
+          <th>07</th>
+          <th>08</th>
+          <th>09</th>
+          <th>10</th>  
+          <th>Avg.</th>      
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Frame-to-Frame</td>
+          <td align="center">0.9/2.1</td>
+          <td align="center">1.2/4.0</td>
+          <td align="center">0.8/2.3</td>
+          <td align="center">0.7/1.4</td>
+          <td align="center">1.1/11.9</td>
+          <td align="center">0.8/1.5</td>
+          <td align="center">0.6/1.0</td>
+          <td align="center">1.2/1.8</td>
+          <td align="center">1.0/2.5</td>
+          <td align="center">0.8/1.9</td>
+          <td align="center">1.0/1.8</td>
+          <td align="center">0.9/2.9</td>
+        </tr>
+        <tr>
+          <td>Frame-to-Model</td>
+          <td align="center">0.3/<span style="font-weight: bold;">0.7</span></td>
+          <td align="center">0.5/1.7</td>
+          <td align="center">0.4/1.1</td>
+          <td align="center">0.5/<span style="font-weight: bold;">0.7</span></td>
+          <td align="center">0.3/<span style="font-weight: bold;">0.4</span></td>
+          <td align="center">0.2/0.5</td>
+          <td align="center">0.2/<span style="font-weight: bold;">0.4</span></td>
+          <td align="center">0.3/<span style="font-weight: bold;">0.4</span></td>
+          <td align="center">0.4/<span style="font-weight: bold;">1.0</span></td>
+          <td align="center">0.3/<span style="font-weight: bold;">0.5</span></td>
+          <td align="center">0.3/<span style="font-weight: bold;">0.7</span></td>
+          <td align="center">0.3/<span style="font-weight: bold;">0.7</span></td>
+        </tr>            
+        <tr>
+          <td>Frame-to-Model with loop closure</td>
+          <td align="center">0.2/<span style="font-weight: bold;">0.7</span></td>
+          <td align="center">0.5/1.7</td>
+          <td align="center">0.4/1.2</td>
+          <td align="center">0.5/<span style="font-weight: bold;">0.7</span></td>
+          <td align="center">0.3/<span style="font-weight: bold;">0.4</span></td>
+          <td align="center">0.2/<span style="font-weight: bold;">0.4</span></td>
+          <td align="center">0.3/0.5</td>
+          <td align="center">0.6/0.7</td>
+          <td align="center">0.4/1.2</td>
+          <td align="center">0.2/0.6</td>
+          <td align="center">0.3/<span style="font-weight: bold;">0.7</span></td>
+          <td align="center">0.3/0.8</td>
+        </tr>             
+        <tr>
+          <td>SOFT-SLAM <a href="#citation20">[20]</a></td>
+          <td align="center">0.2/0.7</td>
+          <td align="center">0.2/1.0</td>
+          <td align="center">0.2/1.4</td>
+          <td align="center">0.2/0.7</td>
+          <td align="center">0.2/0.5</td>
+          <td align="center">0.2/0.4</td>
+          <td align="center">0.1/0.4</td>
+          <td align="center">0.2/0.4</td>
+          <td align="center">0.2/0.8</td>
+          <td align="center">0.2/0.6</td>
+          <td align="center">0.3/0.7</td>
+          <td align="center">0.2/0.7</td>
+        </tr>
+      </tbody>
+    </table>
 
+  <div id="block"> 
+  <p>This table shows the relative errors averaged over trajectories of 100 to 800m length in the format (relative rotational error in degrees per 100m / relative translational error in %). Bold numbers indicate top performance for laser-based approaches.</p>
+  <p>The above table are the results in the existing paper.</p>
+  <p>SOFT-SLAM <a href="#citation20">[20]</a> was the best performing approach at the time before this paper was published. It was a stereo-vision based approach.</p>
+  </div>
 
-  <h2>CITATION:</h2>
+  <table class="result2">
+      <thead>
+        <tr>
+          <th>Approach</th>
+          <th>00</th>
+          <th>01</th>
+          <th>02</th>
+          <th>03</th>
+          <th>04</th>
+          <th>05</th>
+          <th>06</th>
+          <th>07</th>
+          <th>08</th>
+          <th>09</th>
+          <th>10</th>  
+          <th>Avg.</th>      
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Frame-to-Frame (fov (-15, 15))</td>
+          <td align="center">1.1/2.3</td>
+          <td align="center">1.3/4.2</td>
+          <td align="center">1.1/2.4</td>
+          <td align="center">0.8/1.6</td>
+          <td align="center">1.1/11.9</td>
+          <td align="center">0.9/1.6</td>
+          <td align="center">0.8/1.0</td>
+          <td align="center">1.1/1.9</td>
+          <td align="center">1.1/2.6</td>
+          <td align="center">0.8/2.1</td>
+          <td align="center">1.0/1.8</td>
+          <td align="center">1.1/3.3</td>
+        </tr>
+        <tr>
+          <td>Frame-to-Frame ((w, h) (900, 128))</td>
+          <td align="center">1.0/2.2</td>
+          <td align="center">1.2/4.1</td>
+          <td align="center">1.0/2.4</td>
+          <td align="center">0.7/1.5</td>
+          <td align="center">1.1/11.7</td>
+          <td align="center">0.8/1.6</td>
+          <td align="center">0.6/0.9</td>
+          <td align="center">1.3/1.8</td>
+          <td align="center">1.1/2.6</td>
+          <td align="center">0.9/1.9</td>
+          <td align="center">1.0/1.8</td>
+          <td align="center">1.0/2.9</td>
+        </tr>
+        <tr>
+          <td>Frame-to-Frame (icp (5))</td>
+          <td align="center">0.9/2.2</td>
+          <td align="center">1.2/4.0</td>
+          <td align="center">0.9/2.3</td>
+          <td align="center">0.7/1.4</td>
+          <td align="center">1.1/11.9</td>
+          <td align="center">0.9/1.5</td>
+          <td align="center">0.6/1.0</td>
+          <td align="center">1.2/1.8</td>
+          <td align="center">1.0/2.6</td>
+          <td align="center">0.8/1.9</td>
+          <td align="center">1.0/1.8</td>
+          <td align="center">0.9/2.9</td>
+        </tr>
+        <tr>
+          <td>Frame-to-Model (fov (-15, 15))</td>
+          <td align="center">0.4/0.9</td>
+          <td align="center">0.5/1.7</td>
+          <td align="center">0.6/1.2</td>
+          <td align="center">0.5/0.7</td>
+          <td align="center">0.3/0.4</td>
+          <td align="center">0.2/0.6</td>
+          <td align="center">0.2/0.4</td>
+          <td align="center">0.3/0.5</td>
+          <td align="center">0.5/1.2</td>
+          <td align="center">0.4/0.5</td>
+          <td align="center">0.3/0.8</td>
+          <td align="center">0.4/0.8</td>
+        </tr>
+        <tr>
+          <td>Frame-to-Model ((w, h) (900, 128))</td>
+          <td align="center">0.5/0.8</td>
+          <td align="center">0.6/1.7</td>
+          <td align="center">0.6/1.3</td>
+          <td align="center">0.6/0.7</td>
+          <td align="center">0.3/0.4</td>
+          <td align="center">0.2/0.5</td>
+          <td align="center">0.3/0.5</td>
+          <td align="center">0.4/0.4</td>
+          <td align="center">0.5/1.0</td>
+          <td align="center">0.3/0.5</td>
+          <td align="center">0.4/0.7</td>
+          <td align="center">0.4/0.7</td>
+        </tr> 
+        <tr>
+          <td>Frame-to-Model (icp (5))</td>
+          <td align="center">0.3/0.8</td>
+          <td align="center">0.5/1.7</td>
+          <td align="center">0.5/1.1</td>
+          <td align="center">0.5/0.7</td>
+          <td align="center">0.3/0.4</td>
+          <td align="center">0.2/0.5</td>
+          <td align="center">0.2/0.4</td>
+          <td align="center">0.3/0.4</td>
+          <td align="center">0.5/1.0</td>
+          <td align="center">0.3/0.5</td>
+          <td align="center">0.3/0.7</td>
+          <td align="center">0.3/0.7</td>
+        </tr>            
+        <tr>
+          <td>Frame-to-Model with loop closure (fov (-15, 15))</td>
+          <td align="center">0.4/0.9</td>
+          <td align="center">0.5/1.7</td>
+          <td align="center">0.6/1.2</td>
+          <td align="center">0.5/0.8</td>
+          <td align="center">0.3/0.4</td>
+          <td align="center">0.3/0.6</td>
+          <td align="center">0.2/0.4</td>
+          <td align="center">0.6/0.8</td>
+          <td align="center">0.5/1.2</td>
+          <td align="center">0.4/0.7</td>
+          <td align="center">0.3/0.8</td>
+          <td align="center">0.4/0.9</td>
+        </tr> 
+        <tr>
+          <td>Frame-to-Model with loop closure ((w, h) (900, 128))</td>
+          <td align="center">0.5/0.8</td>
+          <td align="center">0.6/1.7</td>
+          <td align="center">0.7/1.3</td>
+          <td align="center">0.6/0.7</td>
+          <td align="center">0.3/0.5</td>
+          <td align="center">0.2/0.5</td>
+          <td align="center">0.3/0.5</td>
+          <td align="center">0.6/0.7</td>
+          <td align="center">0.5/1.2</td>
+          <td align="center">0.3/0.5</td>
+          <td align="center">0.4/0.7</td>
+          <td align="center">0.5/0.8</td>
+        </tr> 
+        <tr>
+          <td>Frame-to-Model with loop closure (icp (5))</td>
+          <td align="center">0.3/0.8</td>
+          <td align="center">0.5/1.7</td>
+          <td align="center">0.5/1.1</td>
+          <td align="center">0.5/0.7</td>
+          <td align="center">0.3/0.4</td>
+          <td align="center">0.2/0.5</td>
+          <td align="center">0.2/0.4</td>
+          <td align="center">0.6/0.7</td>
+          <td align="center">0.5/1.0</td>
+          <td align="center">0.3/0.5</td>
+          <td align="center">0.3/0.7</td>
+          <td align="center">0.3/0.8</td>
+        </tr>             
+      </tbody>
+    </table>
+
+  <h2>ANALYSIS:</h2>
+
+  <div id="block"> 
+  <h3>New results (My experiments):</h3>
+
+  <h4>1. With respect to Field-of-view (FOV):</h4>
+  <p>Velodyne laser has a vertical Field-of-view of around 30 degrees in total which can be aligned in any way required.</p>
+  <p>Based on the dimensions of the car and applying trigonometry concepts, we can find that the maximum FOV below the level of laser is 25 degrees to scan ana map the area just in front of the car. If it's more than 25 degrees, the laser is going to scan the front part of the car which is just waste of resources. So, our angles start (-25, 5). Minus sign signifies that the angle is below the surface level of the laser.</p>
+  <ol>
+  <li>Now, as we go on tilting the laser above, FOV below decreases and FOV up increases. In these cases, the laser doesn't scan the area immediately in front of the car and surfel maps are not generated for those poses. This leads to point cloud becoming sparse and the trajectory changes which leads to increase in error.</li>
+  </ol>
+
+  <h4>2. With respect to data width and data height:</h4>
+  <ol>
+  <li>If the data_height is large, the point cloud is sparse. There are few invalid values in the vertex map and they are not used to compute a normal. So, there are few points on the normal map and the trajectory changes which leads to increae in error. Smaller data_height leads to dense surfel maps.</li>
+  <li>If the data_height is too small, the point cloud becomes too dense. This makes the robot very sensitive and it follows sharp trajectories which again leads to increase in error.</li>
+  </div>
+
+  <h4>3. With respect to icp-max-distance:</h4>
+  <ol>
+  <li>If the icp-max-distance is large, the trajectory seems to drift as it takes into account points which are away from the vertex map as well. But it doesn't affect the results of small trajectories much. But as the trajectory becomes longer and longer, it leads to increase in error. </li>
+  <li>If the icp-max-distance is made smaller, the error remains the same for these sequences. So, couldn't come to a hypothesis based on it.</li>
+  </ol>
+
+  <p> Based on my observations, I can come to a hypotheses as stated below - </p>
+  <ol>
+  <li>The vertical FOV and data_height and data_width (number of scan lines) are both essential for the approach, since they determine how the point cloud gets projected</li> 
+  <li>icp-max-distance is passed to the shaders where point-to-plane correspondence is calculated. It doesn't affect the results for smaller paths but the trajectory starts to drift as path becomes long.</li>
+  </div>
+
+  <div id="block"> 
+  <h3>Meeting Goals:</h3>
+  <p> My intermediate goals were to research more on <a href="http://wiki.ros.org/" target="blank">ROS</a> and <a href="http://wiki.ros.org/catkin" target="blank">catkin</a> and working on installing the dependencies and catkin workspace. I was able to complete my intermediate goals.</p>
+  <p>But due to time and resource constraints, I wasn't able to re-implement the paper but I did my best to research on the parameters and analyse the results.</p>
+  </div>
+
+  <div id="block"> 
+  <h3>Future Work:</h3>
+  <p> SLAM is a very fast evolving field, especially in recent times using laser scans and surfel maps. There are papers published every year in this field in top conferences like ICCV, IROS, CVPR.</p>
+  <p>This work has many applications in other subfields as well to yield better results for autonomous driving.</p>
+  <ol>
+  <li>This work can be used to perform semantic segmentation of point clouds using laser scans to identify different objects, vehicles, persons on road to learn the sequence better.</li>
+  <li>This can be used to perform object tracking as well once they are identified using segmentation.</li>
+  <li>Deep Learning techniques can be applied to this work as an addition which will enable it to learn the environment in a more accurate way.</li>
+  </ol>
+  <p>These are just some of the ideas for future work I could think of based on my research on this paper. There are plenty more applications to this work.</p>
+  </div>
+
+  <h2>CITATIONS:</h2>
 
   <div id="block">    
-  <p>J. Behley, C. Stachniss. Efficient Surfel-Based SLAM using 3D Laser Range Data in Urban Environments, Proc. of Robotics: Science and Systems (RSS), 2018.</p>
+  <div id="citation1">
+  <p>[1] J. Engel, J. Stuckler, and D. Cremers. Large-scale direct slam with stereo cameras. In Proc. of the IEEE/RSJ Intl. Conf. on Intelligent Robots and Systems (IROS), 2015.</p>
+  </div>
+  <div id="citation2">
+  <p>[2] J. Engel, V. Koltun, and D. Cremers. Direct Sparse Odometry. arXiv:1607.02565, 2016.</p>
+  </div>
+  <div id="citation3">
+  <p>[3] A. Dai, M. Niebner, M. Zollhofer, S. Izadi, and C. Theobalt. BundleFusion: Real-time Globally Consistent 3D Reconstruction using Online Surface Re-integration. ACM Trans. on Graphics (TOG), 2016.
+  </p>
+  </div>
+  <div id="citation4">
+  <p>[4] R. A. Newcombe, S. Izadi, O. Hilliges, D. Molyneaux, D. Kim, A. J. Davison, P. Kohli, J. Shotton, S. Hodges, and A. Fitzgibbon. KinectFusion: Real-Time Dense Surface Mapping and Tracking. In Proc. of the Intl. Symposium on Mixed and Augmented Reality (ISMAR), pages 127–136, 2011.
+  </p>
+  </div>
+  <div id="citation5">
+  <p>[5] L. Platinsky, A.J. Davison, and S. Leutenegger. Monocular Visual Odometry: Sparse Joint Optimisation or Dense Alternation? In Proc. of the IEEE Intl. Conf. on Robotics & Automation (ICRA), 2017.
+  </p>
+  </div>
+  <div id="citation6">
+  <p>[6] J. Zhang and S. Singh. LOAM: Lidar Odometry and Mapping in Real-time. In Proc. of Robotics: Science and Systems (RSS), 2014.
+  </p>
+  </div>
+  <div id="citation7">
+  <p>[7] J. Zhang and S. Singh. Low-drift and real-time lidar odometry and mapping. Autonomous Robots, 41:401–416, 2017.
+  </p>
+  </div>
+  <div id="citation8">
+  <p>[8] J. Levinson and S. Thrun. Robust Vehicle Localization in Urban Environments Using Probabilistic Maps. In Proc. of the IEEE Intl. Conf. on Robotics & Automation (ICRA), pages 4372–4378, 2010.
+  </p>
+  </div>
+  <div id="citation9">
+  <p>[9] J. Levinson, M. Montemerlo, and S. Thrun. Map-Based Precision Vehicle Localization in Urban Environments. In Proc. of Robotics: Science and Systems (RSS), 2007.
+  </p>
+  </div>
+  <div id="citation10">
+  <p>[10] F. Moosmann and C. Stiller. Velodyne SLAM. In Proc. of the IEEE Intelligent Vehicles Symposium (IV), pages 393–398, 2011.
+  </p>
+  </div>
+  <div id="citation11">
+  <p>[11] M. Velas, M. Spanel, and A. Herout. Collar Line Segments for Fast Odometry Estimation from Velodyne Point Clouds. In Proc. of the IEEE Intl. Conf. on Robotics & Automation (ICRA), 2016.
+  </p>
+  </div>
+  <div id="citation12">
+  <p>[12] M. Keller, D. Lefloch, M. Lambers, and S. Izadi. Real-time 3D Reconstruction in Dynamic Scenes using Point-based Fusion. In Proc. of the Intl. Conf. on 3D Vision (3DV), pages 1–8, 2013.
+  </p> 
+  </div>
+  <div id="citation13">
+  <p>[13] M. Niebner, M. Zollhofer, S. Izadi, and M. Stamminger.Real-time 3D Reconstruction at Scale using Voxel Hashing. Proc. of the SIGGRAPH Asia, 32(6), 2013.
+  </p> 
+  </div>
+  <div id="citation14">
+  <p>[14] R. F. Salas-Moreno, B. Glocker, P. H. J. Kelly, and A. J. Davison. Dense Planar SLAM. In Proc. of the Intl. Symposium on Mixed and Augmented Reality (ISMAR), pages 157–164, 2014.
+  </p> 
+  </div>
+  <div id="citation15">
+  <p>[15] T. Weise, T. Wismer, B. Leibe, and L. Van Gool. Online loop closure for real-time interactive 3D scanning. Computer Vision and Image Understanding, 115:635–648, 2011.
+  </p> 
+  </div>
+  <div id="citation16">
+  <p>[16] T. Whelan, S. Leutenegger, R. S. Moreno, B. Glocker, and A. Davison. ElasticFusion: Dense SLAM Without A Pose Graph. In Proc. of Robotics: Science and Systems(RSS), 2015.
+  </p> 
+  </div>
+  <div id="citation17">
+  <p>[17] T. Rohling, J. Mack, and D. Schulz. A Fast Histogram-Based Similarity Measure for Detecting Loop Closures in 3-D LIDAR Data. In Proc. of the IEEE/RSJ Intl. Conf. on Intelligent Robots and Systems (IROS), pages 736–741, 2015.
+  </p> 
+  </div>
+  <div id="citation18">
+  <p>[18] B. Steder, G. Grisetti, and W. Burgard. Robust Place Recognition for 3D Range Data Based on Point Features. In Proc. of the IEEE Intl. Conf. on Robotics & Automation (ICRA), 2010.
+  </p> 
+  </div>
+  <div id="citation19">
+  <p>[19] B. Steder, M. Ruhnke, S. Grzonka, and W. Burgard. Place Recognition in 3D Scans Using a Combination of Bag of Words and Point Feature Based Relative Pose Estimation. In Proc. of the IEEE/RSJ Intl. Conf. on Intelligent Robots and Systems (IROS), 2011.
+  </p> 
+  </div>
+  <div id="citation20">
+  <p>[20] I. Cvisic, J. Cesic, I. Markovic, and I. Petrovic. SOFT-SLAM: Computationally Efficient Stereo Visual SLAM for Autonomous UAVs. Journal of Field Robotics (JFR), 2017.
+  </p> 
+  </div>
+
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
